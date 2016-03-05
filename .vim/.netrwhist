@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/aniketmathur/.vim/colors'
+let g:netrw_dirhist_2='/Users/aniketmathur/Documents/Onedrive/Documents/CSE12/PR1'
+let g:netrw_dirhist_3='/Users/aniketmathur/Desktop/ruby/projects/lexicon/lib/lexicon'
+let g:netrw_dirhist_4='/Users/aniketmathur/.vim'
+let g:netrw_dirhist_5='/Users/aniketmathur/Desktop/ruby/projects/gothonweb/views'
+let g:netrw_dirhist_6='/Users/aniketmathur/Desktop/C/ex1.dSYM'
