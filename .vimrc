@@ -1,6 +1,6 @@
 " Name:     vimrc
 " Author:   Aniket
-" Modified: 11th February 2016
+" Modified: 28th May 2016
 " --------------------------- Vundle ------------------------------ {{{
 
 set nocompatible              " be iMproved, required
@@ -9,27 +9,25 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" colorschemes
 Plugin 'https://github.com/altercation/solarized.git'
-"
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
+Plugin 'jacoborus/tender'
+Plugin 'sjl/badwolf'
+Plugin 'tomasr/molokai'
+
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-Plugin 'L9'
-" Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
 
 Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
+
 "
 " Brief help
 " :PluginList       - lists configured plugins
@@ -40,7 +38,6 @@ filetype plugin indent on    " required
 " auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 "}}}
 " --------------------------- General + UI ------------------------ {{{
 set number              " displays line numbers
@@ -53,41 +50,66 @@ set incsearch           " searches while typing in pattern
 set backspace=indent,eol,start
 set ruler               " shows cursor line and column number
 set confirm             " activates confirmation messages
-set visualbell
-"set t_vb=
-set mouse=a
+set noerrorbells
+set foldenable          " enable folding by default
+set mouse=a             " allow mouse use
 let mapleader=","
-set foldenable          " enable folding
-set foldlevelstart=0    " open most folds by default
-set foldmethod=marker   " folds based on indent level
 set splitright
 set splitbelow
 set list listchars=tab:»·,trail:· " highlights trailing whitespaces
-"}}}
-" --------------------------- Arm Assembly ------------------------ {{{
-let asmsyntax='armasm'
-let filetype_inc='armasm'
+set laststatus=2        " makes airline appear
+set timeoutlen=100
 "}}}
 " --------------------------- Indentation settings ---------------- {{{
+filetype plugin indent on   " enables filetype
+syntax on                   " activates syntax
 set tabstop=4               " number of visual spaces per tab
 set shiftwidth=4            " controls the level of indentation
 set softtabstop=4           " number of spaces used while editing
 set expandtab               " converts tabs to space
-filetype plugin indent on   " enables filetype
-syntax on                   " activates syntax
 set autoindent              " sets autoindentation for all files
+"}}}
+" --------------------------- file specific indentation ----------- {{{
+augroup vim_folding         " folding method just for the vimrc
+    autocmd!
+    autocmd FileType vim setlocal foldlevelstart=0 foldmethod=marker
+augroup END
+
+augroup ruby_indent
+    autocmd!
+    autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
+augroup END
+
+augroup py_indent
+    autocmd!
+    autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
+augroup END
+
+augroup makefile_indent
+    autocmd!
+    autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
+augroup END
+
+augroup cpp_indent
+    autocmd!
+    autocmd FileType c++ setlocal expandtab shiftwidth=2 softtabstop=2
+    autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+augroup END
+
 "}}}
 " --------------------------- Colors ------------------------------ {{{
 
 let g:solarized_termcolors=256
 syntax enable
 set background=dark                 " uses a dark background for vim
-colorscheme solarized               " theme setter
+colorscheme badwolf                 " theme setter
+let g:airline_theme='badwolf'
+let badwolf_tabline=0
 
 " Some custom highlighting to get the background color correct
-hi Normal ctermbg=none ctermfg=none
-hi NonText ctermbg=none
-hi Folded ctermbg=none
+" hi Normal ctermbg=none ctermfg=none
+" hi NonText ctermbg=none
+" hi Folded ctermbg=none
 
 "}}}
 " --------------------------- Key Remappings ---------------------- {{{
@@ -101,25 +123,28 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <space> za
+nnoremap <silent>j gj
+nnoremap <silent>k gk
+nnoremap <leader>g gg=G
+nnoremap <leader>ev :split $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>" viw<ESC>a"<ESC>hbi"<ESC>lel
+nnoremap <leader>' viw<ESC>a'<ESC>hbi'<ESC>lel
+nnoremap H ^
+nnoremap L $
+inoremap jk <ESC>
 " maps the F4 key to insert a header in the current file
-inoremap <F4> <ESC>mz:execute FillHeader()<CR>`z7jA
-"}}}
-" --------------------------- file specific indentation ----------- {{{
-autocmd FileType ruby setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4
-autocmd FileType make setlocal noexpandtab tabstop=4 shiftwidth=4
-autocmd FileType c++ setlocal expandtab shiftwidth=2 softtabstop=2
-autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
+inoremap <F4> <ESC>mz:execute FillHeader()<CR>`z8jA
 "}}}
 " --------------------------- functions --------------------------- {{{
 
-function FillHeader()
+function! FillHeader()
     let s:line = line(".")
     call setline(s:line, "/***")
-    call append(s:line,  " * Author:                ")
+    call append(s:line,  " * Author:                 Aniket Mathur")
     call append(s:line+1, " * Email:                 a3mathur@ucsd.edu")
     call append(s:line+2, " *")
-    call append(s:line+3, " * Date:                  " .strfitme("%b %d, %Y"))
+    call append(s:line+3, " * Date:                  " .strftime("%b %d, %Y"))
     call append(s:line+4, " *")
     call append(s:line+5, " * File:                  " .expand("%"))
     call append(s:line+6, " *")
@@ -128,3 +153,9 @@ function FillHeader()
     unlet s:line
 endfunction
 "}}}
+" --------------------------- Abbreviations ----------------------- {{{
+" Typo correction plus small convenience while typing lots of things
+cnoreabbrev Wq wq
+cnoreabbrev WQ wq
+inoreabbrev @@ aniketmathur000@gmail.com
+" }}}

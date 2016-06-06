@@ -1,0 +1,9 @@
+# ignore everything
+*
+
+# exceptions list
+!.gitignore
+!.vim*
+!.vim/*
+!.ssh/*
+!.bash_profile
