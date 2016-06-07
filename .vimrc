@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'rking/ag.vim'
 " colorschemes
 Plugin 'https://github.com/altercation/solarized.git'
 Plugin 'jacoborus/tender'
@@ -43,6 +44,7 @@ call vundle#end()            " required
 set number              " displays line numbers
 set showcmd             " show command bar
 set wildmenu            " visual autocomplete for cmd menu
+set lazyredraw
 set colorcolumn=80      " sets a color column at 80 characters
 set showmatch           " highlights matching parentheses
 set hlsearch            " highlights matched patterns
@@ -58,7 +60,7 @@ set splitright
 set splitbelow
 set list listchars=tab:»·,trail:· " highlights trailing whitespaces
 set laststatus=2        " makes airline appear
-set timeoutlen=100
+set notimeout ttimeout ttimeoutlen=100
 "}}}
 " --------------------------- Indentation settings ---------------- {{{
 filetype plugin indent on   " enables filetype

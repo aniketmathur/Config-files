@@ -17,10 +17,10 @@
 $sgr0
 
 # Command Line History (newest to oldest):
-:qa
-:wq
-:w
 :q
+:wq
+:qa
+:w
 :help function
 :set statusline=FileType:\ %y
 :statusline=FileType:\ %y
@@ -129,7 +129,7 @@ $sgr0
 # Registers:
 "0	LINE	0
 	nnoremap <leader>" viw<ESC>a"<ESC>hbi"<ESC>lel
-""1	LINE	0
+"1	LINE	0
 	#export PS1="[\[\e[34m\]\u\[\e[m\]:\[\e[32m\]\W\[\e[m\]]> "
 "2	LINE	0
 	#alias vim='mvim -v'
@@ -264,32 +264,39 @@ $sgr0
 	
 "w	CHAR	0
 	
-"-	CHAR	0
-	 
+""-	CHAR	0
+	/
 
 # File marks:
-'0  5  0  ~/Documents/Onedrive/Documents/CSE100/PA4/.gitignore
-'1  1  0  ~/.vimrc_cs30
-'2  125  18  ~/.vimrc
-'3  10  0  ~/.bash_profile
-'4  115  0  ~/.vimrc
-'5  141  8  ~/.vimrc
-'6  105  6  ~/.vim/bundle/vim-airline/plugin/airline.vim
-'7  1  0  ~/.vimrc
-'8  1  0  ~/AndroidStudioProjects/CSE110Group25/app/build.gradle
-'9  53  0  ~/AndroidStudioProjects/CSE110Group25/app/src/androidTest/java/com/example/aniket/coupletonesapp/Tests/MainActivityTester.java
+'0  133  15  ~/.vimrc
+'1  63  3  ~/.vimrc
+'2  18  0  ~/.viminfo
+'3  43  0  ~/.vimrc
+'4  18  6  ~/.vimrc
+'5  54  13  ~/.vimrc
+'6  5  0  ~/Documents/Onedrive/Documents/CSE100/PA4/.gitignore
+'7  1  0  ~/.vimrc_cs30
+'8  127  18  ~/.vimrc
+'9  10  0  ~/.bash_profile
 
 # Jumplist (newest first):
+-'  133  15  ~/.vimrc
+-'  1  0  ~/.vimrc
+-'  63  3  ~/.vimrc
+-'  18  0  ~/.viminfo
+-'  1  0  ~/.viminfo
+-'  43  0  ~/.vimrc
+-'  18  6  ~/.vimrc
+-'  54  13  ~/.vimrc
 -'  5  0  ~/Documents/Onedrive/Documents/CSE100/PA4/.gitignore
 -'  1  0  ~/Documents/Onedrive/Documents/CSE100/PA4/.gitignore
 -'  1  0  ~/.vimrc_cs30
--'  125  18  ~/.vimrc
--'  1  0  ~/.vimrc
+-'  127  18  ~/.vimrc
 -'  10  0  ~/.bash_profile
 -'  1  0  ~/.bash_profile
--'  115  0  ~/.vimrc
--'  141  8  ~/.vimrc
--'  65  40  ~/.vimrc
+-'  117  0  ~/.vimrc
+-'  143  8  ~/.vimrc
+-'  67  40  ~/.vimrc
 -'  105  6  ~/.vim/bundle/vim-airline/plugin/airline.vim
 -'  1  0  ~/.vim/bundle/vim-airline/plugin/airline.vim
 -'  1  0  ~/AndroidStudioProjects/CSE110Group25/app/build.gradle
@@ -302,27 +309,27 @@ $sgr0
 -'  24  0  ~/AndroidStudioProjects/RobolectricBuilder/app/src/test/java/com/example/myapplication/RobolectricTest.java
 -'  23  0  ~/AndroidStudioProjects/RobolectricBuilder/app/src/test/java/com/example/myapplication/RobolectricTest.java
 -'  1  0  ~/AndroidStudioProjects/RobolectricBuilder/app/src/test/java/com/example/myapplication/RobolectricTest.java
--'  105  24  ~/.vimrc
--'  92  0  ~/.vimrc
--'  90  4  ~/.vimrc
--'  88  0  ~/.vimrc
--'  87  0  ~/.vimrc
--'  85  4  ~/.vimrc
--'  83  0  ~/.vimrc
--'  82  0  ~/.vimrc
--'  80  4  ~/.vimrc
--'  78  10  ~/.vimrc
--'  162  19  ~/.vimrc
--'  67  0  ~/.vimrc
--'  58  2  ~/.vimrc
--'  75  0  ~/.vimrc
+-'  107  24  ~/.vimrc
+-'  94  0  ~/.vimrc
+-'  92  4  ~/.vimrc
+-'  90  0  ~/.vimrc
+-'  89  0  ~/.vimrc
+-'  87  4  ~/.vimrc
+-'  85  0  ~/.vimrc
+-'  84  0  ~/.vimrc
+-'  82  4  ~/.vimrc
+-'  80  10  ~/.vimrc
+-'  164  19  ~/.vimrc
+-'  69  0  ~/.vimrc
+-'  60  2  ~/.vimrc
+-'  77  0  ~/.vimrc
 -'  6  4  ~/.vimrc
--'  43  15  ~/.vimrc
--'  45  0  ~/.vimrc
--'  70  0  ~/.vimrc
--'  69  21  ~/.vimrc
--'  57  8  ~/.vimrc
--'  20  0  ~/.vimrc
+-'  44  15  ~/.vimrc
+-'  46  0  ~/.vimrc
+-'  72  0  ~/.vimrc
+-'  71  21  ~/.vimrc
+-'  59  8  ~/.vimrc
+-'  21  0  ~/.vimrc
 -'  103  14  ~/.vimrc_cs30
 -'  98  1  ~/.vimrc_cs30
 -'  35  7  ~/AndroidStudioProjects/Shared_Pref/app/src/main/java/com/example/aniket/shared_pref/MainActivity.java
@@ -336,18 +343,16 @@ $sgr0
 -'  14  17  ~/.vimrc
 -'  12  31  ~/.vimrc
 -'  10  22  ~/.vimrc
--'  27  35  ~/.vimrc
--'  26  40  ~/.vimrc
--'  25  13  ~/.vimrc
--'  24  43  ~/.vimrc
--'  22  14  ~/.vimrc
--'  21  11  ~/.vimrc
--'  47  26  ~/.vimrc
--'  56  4  ~/.vimrc
--'  42  0  ~/.vimrc
+-'  28  35  ~/.vimrc
+-'  27  40  ~/.vimrc
+-'  26  13  ~/.vimrc
+-'  25  43  ~/.vimrc
+-'  23  14  ~/.vimrc
+-'  22  11  ~/.vimrc
+-'  49  26  ~/.vimrc
+-'  58  4  ~/.vimrc
 -'  4  0  ~/.vimrc
--'  61  17  ~/.vimrc
--'  51  18  ~/.vimrc
+-'  53  18  ~/.vimrc
 -'  5  12  ~/AndroidStudioProjects/CSE110Group25/.gitignore
 -'  1  0  ~/AndroidStudioProjects/CSE110Group25/.gitignore
 -'  6  10  ~/AndroidStudioProjects/CSE110Group25/.gitignore
@@ -358,7 +363,7 @@ $sgr0
 -'  53  0  ~/Documents/Onedrive/Documents/CSE11/PR7/Coord.java
 -'  1  0  ~/Documents/Onedrive/Documents/CSE11/PR7/Coord.java
 -'  7  0  ~/.vimrc
--'  163  19  ~/.vimrc
+-'  165  19  ~/.vimrc
 -'  35  7  ~/AndroidStudioProjects/Shared_Pref/app/src/main/java/com/example/aniket/shared_pref/MainActivity.java
 -'  1  0  ~/AndroidStudioProjects/Shared_Pref/app/src/main/java/com/example/aniket/shared_pref/MainActivity.java
 -'  960  30  ~/.vim/colors/solarized.vim
@@ -373,14 +378,116 @@ $sgr0
 -'  24  0  ~/AndroidStudioProjects/RobolectricBuilder/app/src/test/java/com/example/myapplication/RobolectricTest.java
 -'  23  0  ~/AndroidStudioProjects/RobolectricBuilder/app/src/test/java/com/example/myapplication/RobolectricTest.java
 -'  1  0  ~/AndroidStudioProjects/RobolectricBuilder/app/src/test/java/com/example/myapplication/RobolectricTest.java
--'  125  18  ~/.vimrc
--'  7  6  ~/.gitignore
--'  1  0  ~/.gitignore
--'  9  13  ~/.gitignore
--'  1  0  ~/.vimrc_cs30
--'  125  18  ~/.vimrc
 
 # History of marks within files (newest to oldest):
+
+> ~/.vimrc
+	"	133	15
+	^	63	4
+	.	63	12
+	+	164	0
+	+	164	4
+	+	164	4
+	+	164	4
+	+	164	67
+	+	164	4
+	+	3	24
+	+	164	0
+	+	164	126
+	+	164	310
+	+	164	0
+	+	164	127
+	+	164	201
+	+	164	145
+	+	164	0
+	+	164	315
+	+	74	0
+	+	164	199
+	+	164	80
+	+	164	127
+	+	164	174
+	+	164	187
+	+	164	200
+	+	164	257
+	+	164	309
+	+	164	314
+	+	164	0
+	+	164	0
+	+	164	0
+	+	164	15
+	+	164	38
+	+	12	0
+	+	16	0
+	+	20	0
+	+	25	0
+	+	27	0
+	+	24	0
+	+	31	0
+	+	42	0
+	+	57	0
+	+	55	15
+	+	59	0
+	+	164	0
+	+	77	74
+	+	77	70
+	+	77	24
+	+	80	0
+	+	78	10
+	+	75	12
+	+	77	23
+	+	77	70
+	+	77	70
+	+	77	12
+	+	77	78
+	+	75	18
+	+	76	11
+	+	75	62
+	+	77	34
+	+	56	50
+	+	32	0
+	+	65	0
+	+	57	40
+	+	44	0
+	+	56	51
+	+	77	0
+	+	72	0
+	+	69	0
+	+	66	0
+	+	72	0
+	+	67	0
+	+	164	18
+	+	164	3
+	+	164	12
+	+	164	0
+	+	164	11
+	+	164	11
+	+	164	0
+	+	164	0
+	+	164	0
+	+	164	15
+	+	164	16
+	+	164	10
+	+	164	12
+	+	164	0
+	+	164	17
+	+	164	70
+	+	164	0
+	+	164	11
+	+	164	11
+	+	164	0
+	+	164	0
+	+	80	18
+	+	80	0
+	+	79	0
+	+	107	24
+	+	164	0
+	+	143	8
+	+	47	13
+	+	18	6
+	+	63	12
+
+> ~/.viminfo
+	"	18	0
 
 > ~/Documents/Onedrive/Documents/CSE100/PA4/.gitignore
 	"	5	0
@@ -453,111 +560,6 @@ $sgr0
 	+	68	14
 	+	102	4
 	+	103	14
-
-> ~/.vimrc
-	"	125	18
-	^	141	9
-	.	141	8
-	+	162	71
-	+	162	12
-	+	162	0
-	+	162	0
-	+	162	4
-	+	162	4
-	+	162	4
-	+	162	67
-	+	162	4
-	+	3	24
-	+	162	0
-	+	162	126
-	+	162	310
-	+	162	0
-	+	162	127
-	+	162	201
-	+	162	145
-	+	162	0
-	+	162	315
-	+	72	0
-	+	162	199
-	+	162	80
-	+	162	127
-	+	162	174
-	+	162	187
-	+	162	200
-	+	162	257
-	+	162	309
-	+	162	314
-	+	162	0
-	+	162	0
-	+	162	0
-	+	162	15
-	+	162	38
-	+	12	0
-	+	16	0
-	+	19	0
-	+	24	0
-	+	26	0
-	+	23	0
-	+	30	0
-	+	41	0
-	+	55	0
-	+	53	15
-	+	57	0
-	+	162	0
-	+	75	74
-	+	75	70
-	+	75	24
-	+	78	0
-	+	76	10
-	+	73	12
-	+	75	23
-	+	75	70
-	+	75	70
-	+	75	12
-	+	75	78
-	+	73	18
-	+	74	11
-	+	73	62
-	+	75	34
-	+	54	50
-	+	31	0
-	+	63	0
-	+	55	40
-	+	43	0
-	+	54	51
-	+	75	0
-	+	70	0
-	+	67	0
-	+	64	0
-	+	70	0
-	+	65	0
-	+	162	18
-	+	162	3
-	+	162	12
-	+	162	0
-	+	162	11
-	+	162	11
-	+	162	0
-	+	162	0
-	+	162	0
-	+	162	15
-	+	162	16
-	+	162	10
-	+	162	12
-	+	162	0
-	+	162	17
-	+	162	70
-	+	162	0
-	+	162	11
-	+	162	11
-	+	162	0
-	+	162	0
-	+	78	18
-	+	78	0
-	+	77	0
-	+	105	24
-	+	162	0
-	+	141	8
 
 > ~/.bash_profile
 	"	10	0
@@ -1949,9 +1951,3 @@ $sgr0
 	^	4	71
 	.	4	70
 	+	4	70
-
-> ~/Documents/Onedrive/Documents/Code/styleChecker/.gitignore
-	"	2	4
-	^	2	5
-	.	2	4
-	+	2	4
