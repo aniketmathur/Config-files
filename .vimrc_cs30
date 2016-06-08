@@ -1,5 +1,5 @@
 " Author: Aniket Mathur
-" Last Modified: June 5, 2016
+" Last Modified: June 8, 2016
 " Based on the vimrc by Lisa McCutcheon
 " Wed Feb 07, 2007
 
@@ -41,8 +41,8 @@ let mapleader=","				" redefine map leader for nifty shortcuts
 set autoindent					" autoindentation so that things line up
 filetype plugin indent on		" vim knows what to do based on type of file
 set foldenable					" allows folding at the markers
-set foldlevelstart=0			" fold by default
-set foldmethod=marker			" folds at the marker
+" set foldlevelstart=0			" fold by default
+" set foldmethod=marker			" folds at the marker
 syntax on						" Show syntax
 "}}}
 " File Specific Indentation Settings {{{
@@ -109,4 +109,4 @@ function! ToggleCursorLine()
 endfunction
 nmap <C-L> :call ToggleCursorLine()<CR>
 "}}}
-" vim:ts=4:sts=4:sw=4
+" vim:ts=4:sts=4:sw=4:foldmethod=marker:foldlevelstart=0
