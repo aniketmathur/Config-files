@@ -25,7 +25,7 @@ Plugin 'tomasr/molokai'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'https://github.com/Valloric/YouCompleteMe.git'
+"Plugin 'https://github.com/Valloric/YouCompleteMe.git'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -72,6 +72,15 @@ set expandtab               " converts tabs to space
 set autoindent              " sets autoindentation for all files
 "}}}
 " --------------------------- file specific indentation ----------- {{{
+augroup coffee
+    autocmd!
+    autocmd bufReadPre,BufNewFile *.coffee setlocal filetype=javascript
+augroup END
+
+augroup kwmrc
+    autocmd!
+    autocmd bufReadPre,BufNewFile kwmrc setlocal filetype=javascript
+
 augroup vim_folding         " folding method just for the vimrc
     autocmd!
     autocmd FileType vim setlocal foldlevelstart=0 foldmethod=marker
@@ -101,18 +110,17 @@ augroup END
 "}}}
 " --------------------------- Colors ------------------------------ {{{
 
-let g:solarized_termcolors=256
 syntax enable
 set background=dark                 " uses a dark background for vim
-colorscheme badwolf                 " theme setter
-let g:airline_theme='badwolf'
+colorscheme solarized               " theme setter
+let g:airline_theme='solarized'
 let badwolf_tabline=0
 
 " Some custom highlighting to get the background color correct
-" hi Normal ctermbg=none ctermfg=none
-" hi NonText ctermbg=none
-" hi Folded ctermbg=none
-
+"hi Normal ctermbg=none ctermfg=none
+"hi Folded ctermbg=0F7674
+"hi LineNr ctermbg=0F7674 ctermfg=586e75
+"hi ColorColumn ctermbg=0F7674
 "}}}
 " --------------------------- Key Remappings ---------------------- {{{
 " remaps the keys to make it easier to move around in split mode
