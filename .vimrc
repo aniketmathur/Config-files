@@ -21,6 +21,7 @@ Plugin 'https://github.com/altercation/solarized.git'
 Plugin 'jacoborus/tender'
 Plugin 'sjl/badwolf'
 Plugin 'tomasr/molokai'
+Plugin 'mhartington/oceanic-next'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
@@ -44,7 +45,7 @@ call vundle#end()            " required
 set number              " displays line numbers
 set showcmd             " show command bar
 set wildmenu            " visual autocomplete for cmd menu
-set lazyredraw
+set lazyredraw          " Don't redraw unless necessary
 set colorcolumn=80      " sets a color column at 80 characters
 set showmatch           " highlights matching parentheses
 set hlsearch            " highlights matched patterns
@@ -68,8 +69,8 @@ syntax on                   " activates syntax
 set tabstop=4               " number of visual spaces per tab
 set shiftwidth=4            " controls the level of indentation
 set softtabstop=4           " number of spaces used while editing
-set expandtab               " converts tabs to space
 set autoindent              " sets autoindentation for all files
+set expandtab               " tabs to spaces automagically
 "}}}
 " --------------------------- file specific indentation ----------- {{{
 augroup coffee
@@ -80,6 +81,7 @@ augroup END
 augroup kwmrc
     autocmd!
     autocmd bufReadPre,BufNewFile kwmrc setlocal filetype=javascript
+augroup END
 
 augroup vim_folding         " folding method just for the vimrc
     autocmd!
@@ -107,12 +109,17 @@ augroup cpp_indent
     autocmd FileType cpp setlocal expandtab shiftwidth=2 softtabstop=2
 augroup END
 
+augroup bash
+    autocmd!
+    autocmd FileType sh setlocal noexpandtab shiftwidth=4 tabstop=4
+augroup END
+
 "}}}
 " --------------------------- Colors ------------------------------ {{{
 
 syntax enable
 set background=dark                 " uses a dark background for vim
-colorscheme solarized               " theme setter
+colorscheme Solarized               " theme setter
 let g:airline_theme='solarized'
 let badwolf_tabline=0
 
