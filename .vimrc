@@ -15,13 +15,15 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'rking/ag.vim'
+"Plugin 'rking/ag.vim'
+Plugin 'chrisbra/csv.vim'
 " colorschemes
+Plugin 'https://github.com/KeitaNakamura/neodark.vim'
+Plugin 'https://github.com/tyrannicaltoucan/vim-quantum'
+Plugin 'https://github.com/joshdick/onedark.vim'
 Plugin 'https://github.com/altercation/solarized.git'
-Plugin 'jacoborus/tender'
-Plugin 'sjl/badwolf'
-Plugin 'tomasr/molokai'
 Plugin 'mhartington/oceanic-next'
+Plugin 'ryanoasis/vim-devicons'
 
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
@@ -53,7 +55,8 @@ set incsearch           " searches while typing in pattern
 set backspace=indent,eol,start
 set ruler               " shows cursor line and column number
 set confirm             " activates confirmation messages
-set noerrorbells
+set noerrorbells        " the most necessary thing ever
+"set scrolloff=10        " start scrolling when 10 lines from the edge
 set foldenable          " enable folding by default
 set mouse=a             " allow mouse use
 let mapleader=","
@@ -62,11 +65,24 @@ set splitbelow
 set list listchars=tab:»·,trail:· " highlights trailing whitespaces
 set laststatus=2        " makes airline appear
 set notimeout ttimeout ttimeoutlen=100
+
+augroup set_scrolloff
+    autocmd!
+    autocmd VimEnter,VimResized * call WinSizeSetScrollOff()
+augroup END
+
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+
+let g:airline_left_sep=' '
+let g:airline_right_sep=' '
+
+set guifont=InconsolataForPowerline\ Nerd\ Font:h13
 "}}}
 " --------------------------- Indentation settings ---------------- {{{
 filetype plugin indent on   " enables filetype
 syntax on                   " activates syntax
-set tabstop=4               " number of visual spaces per tab
+"set tabstop=4               " number of visual spaces per tab
 set shiftwidth=4            " controls the level of indentation
 set softtabstop=4           " number of spaces used while editing
 set autoindent              " sets autoindentation for all files
@@ -118,10 +134,22 @@ augroup END
 " --------------------------- Colors ------------------------------ {{{
 
 syntax enable
-set background=dark                 " uses a dark background for vim
-colorscheme Solarized               " theme setter
-let g:airline_theme='solarized'
-let badwolf_tabline=0
+"set background=dark                 " uses a dark background for vim
+
+" support use of 24 bit colors if available
+if (has("termguicolors"))
+    set termguicolors
+else
+    set t_Co=256
+endif
+
+colorscheme neodark                  " theme setter
+set cursorline
+hi CursorLine ctermbg=none guibg=NONE
+hi CursorLineNr ctermbg=none guibg=NONE
+"let g:neodark#background = '#202020'
+let g:airline_theme='neodark'
+let g:quantum_black=1
 
 " Some custom highlighting to get the background color correct
 "hi Normal ctermbg=none ctermfg=none
@@ -150,6 +178,7 @@ nnoremap <leader>' viw<ESC>a'<ESC>hbi'<ESC>lel
 nnoremap H ^
 nnoremap L $
 inoremap jk <ESC>
+nnoremap ; :
 " maps the F4 key to insert a header in the current file
 inoremap <F4> <ESC>mz:execute FillHeader()<CR>`z8jA
 "}}}
@@ -168,6 +197,18 @@ function! FillHeader()
     call append(s:line+7, " * Description:           ")
     call append(s:line+8, " ***/")
     unlet s:line
+endfunction
+
+function! WinSizeSetScrollOff()
+    if  &lines < 40
+        set scrolloff=0
+    elseif &lines >= 40 && &lines < 80
+        set scrolloff=5
+    elseif &lines >= 80 && &lines < 100
+        set scrolloff=15
+    else
+        set scrolloff=35
+    endif
 endfunction
 "}}}
 " --------------------------- Abbreviations ----------------------- {{{

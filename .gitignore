@@ -5,5 +5,7 @@
 !.gitignore
 !.vim*
 !.vim/*
-!.ssh/*
+!.ssh*/*
 !.bash_profile
+!.tmux*
+
