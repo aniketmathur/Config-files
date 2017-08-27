@@ -3,9 +3,11 @@
 
 # exceptions list
 !.gitignore
-!.vim*
-!.vim/*
+!.vimrc*
+!.vim/
+!.vim/{colors,indent,syntax}
 !.ssh*/*
 !.bash_profile
 !.tmux*
 
+!.phoenix.js
