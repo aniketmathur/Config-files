@@ -83,8 +83,8 @@ set guifont=InconsolataForPowerline\ Nerd\ Font:h13
 filetype plugin indent on   " enables filetype
 syntax on                   " activates syntax
 "set tabstop=4               " number of visual spaces per tab
-set shiftwidth=4            " controls the level of indentation
-set softtabstop=4           " number of spaces used while editing
+set shiftwidth=2            " controls the level of indentation
+set softtabstop=2           " number of spaces used while editing
 set autoindent              " sets autoindentation for all files
 set expandtab               " tabs to spaces automagically
 "}}}
@@ -143,13 +143,13 @@ else
     set t_Co=256
 endif
 
+"let g:neodark#background='#202020'
+let g:airline_theme='neodark'
 colorscheme neodark                  " theme setter
 set cursorline
 hi CursorLine ctermbg=none guibg=NONE
 hi CursorLineNr ctermbg=none guibg=NONE
-"let g:neodark#background = '#202020'
-let g:airline_theme='neodark'
-let g:quantum_black=1
+"let g:quantum_black=1
 
 " Some custom highlighting to get the background color correct
 "hi Normal ctermbg=none ctermfg=none
