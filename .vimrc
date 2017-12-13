@@ -143,7 +143,7 @@ else
     set t_Co=256
 endif
 
-"let g:neodark#background='#202020'
+let g:neodark#background='#191919'
 let g:airline_theme='neodark'
 colorscheme neodark                  " theme setter
 set cursorline

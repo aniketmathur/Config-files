@@ -9,7 +9,7 @@ var k = Key;
 var e = Event;
 
 var INCREMENT = 50;
-var PADDING = 8;
+var PADDING = 12;
 var MOD = ["ctrl", "cmd"];
 var ALTMOD = ["alt", "ctrl"];
 
