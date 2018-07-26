@@ -83,8 +83,8 @@ set guifont=InconsolataForPowerline\ Nerd\ Font:h13
 filetype plugin indent on   " enables filetype
 syntax on                   " activates syntax
 "set tabstop=4               " number of visual spaces per tab
-set shiftwidth=2            " controls the level of indentation
-set softtabstop=2           " number of spaces used while editing
+set shiftwidth=4            " controls the level of indentation
+set softtabstop=4           " number of spaces used while editing
 set autoindent              " sets autoindentation for all files
 set expandtab               " tabs to spaces automagically
 "}}}
