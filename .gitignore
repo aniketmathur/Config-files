@@ -1,6 +1,10 @@
+# ignore everything
+*
+.vim/.netrwhist
+
 # exceptions list
 !.gitignore
-!.vimrc*
+!.vimrc
 !.vim/
 !.vim/{colors,indent,syntax}
 !.bash_profile
@@ -9,8 +13,5 @@
 !.tmux*
 !.phoenix.js
 !.dircolors
-
-# ignore everything
-*
-.vim/.netrwhist
+!migrate_conf.sh
 
