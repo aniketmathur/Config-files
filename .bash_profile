@@ -1,34 +1,5 @@
 #!/usr/local/bin/bash
 
-# ease of access variables
-MYVIMRC="$HOME/.vimrc"
-MYBASH="$HOME/.bash_profile"
-
-# aliases
-alias grep="grep --color=auto"
-alias ls="ls --color=auto"
-alias ll="ls -l"
-alias lla="ls -la"
-alias la="ls -a"
-
-# aliases to allow easy config changes
-alias EV="vi $MYVIMRC"
-alias EBP="vi $MYBASH"
-alias SBP=". $MYBASH"
-
-alias 30t="ssh 30tutor"
-U_AM="U_AM"
-
-grade() {
-	if [ $1 -eq "11" ]
-	then
-		ssh -Y 11grader
-	elif [ $1 -eq "30" ]
-	then
-		ssh 30grader
-	fi
-}
-
 # old prompt color
 #export PS1="[\[\033[38;5;39m\]\u\[\033[38;5;15m\]:\[\033[38;5;50m\]\W\[\033[38;5;15m\]]>\[$(tput sgr0)\] "
 
@@ -65,14 +36,6 @@ check_retcode() {
 }
 
 PROMPT_COMMAND=check_retcode
-
-# Configure path to look at brew installed gnu utils instead of the BSD ones
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
-#export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}"
-
-# changes ls colors
-eval `dircolors ${HOME}/.dircolors`
 
 iterm_shell_int="${HOME}/.iterm2_shell_integration.bash"
 [[ -e ${iterm_shell_int} ]] && source ${iterm_shell_int}

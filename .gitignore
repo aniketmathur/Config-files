@@ -1,13 +1,16 @@
-# ignore everything
-*
-
 # exceptions list
 !.gitignore
 !.vimrc*
 !.vim/
 !.vim/{colors,indent,syntax}
-!.ssh*/*
 !.bash_profile
+!.profile
+!.zshrc*
 !.tmux*
-
 !.phoenix.js
+!.dircolors
+
+# ignore everything
+*
+.vim/.netrwhist
+
